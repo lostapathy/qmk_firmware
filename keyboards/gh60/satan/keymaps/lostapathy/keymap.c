@@ -8,15 +8,19 @@ enum unicode_names {
   SNEK,
   IRONY,
   EGGP,
-  FLEX
+  FLEX,
+  TACO,
+  BRTO
 };
 
 const uint32_t PROGMEM unicode_map[] = {
-  [POO] = 0x1F4A9, // 💩
-  [SNEK] = 0x1F40D, // 🐍
-  [IRONY] = 0x2E2E,  // ⸮
-  [EGGP] = 0x1F346, // 🍆
-  [FLEX] = 0x1F4AA, // 💪
+  [POO] = 0x1F4A9, // 💩 poo
+  [SNEK] = 0x1F40D, // 🐍 snake
+  [IRONY] = 0x2E2E,  // ⸮ irony
+  [EGGP] = 0x1F346, // 🍆 eggplant
+  [FLEX] = 0x1F4AA, // 💪 flex
+  [TACO] = 0x1F32E, // 🌮 taco
+  [BRTO] = 0x1F32F, // 🌯 Burrito
 };
 
 #define C_MTCE MT(MOD_LCTL, KC_ESC)
@@ -34,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
     C_MTCE,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT,  KC_ENT,
     MO(1),   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_LSFT, TO(1),
-    KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             KC_LALT, KC_RGUI, TO(1),   KC_RCTL),
+    KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             KC_RALT, KC_RGUI, TO(1),   KC_RCTL),
 
   // Second layer
   // * Function keys on number keys
@@ -55,9 +59,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Access this by hitting both halfs of left shift plus the letter
   LAYOUT_all(
     _______, _______, _______, _______, KC_END,  _______, KC_HOME, _______, _______, _______, _______, KC_PGDN, KC_PGUP, _______, _______,
-    _______, _______, _______, X(EGGP), _______, _______, _______, _______, X(IRONY), _______, X(POO), _______, _______, _______,
+    _______, _______, _______, X(EGGP), _______, X(TACO), _______, _______, X(IRONY), _______, X(POO), _______, _______, _______,
     _______, _______, X(SNEK), _______, X(FLEX), _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, X(BRTO), _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______,                            _______,                            _______, _______, _______, _______),
 };
 
